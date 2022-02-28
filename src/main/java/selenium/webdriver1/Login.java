@@ -12,7 +12,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Testauto{
+public class Login{
 	WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 	
@@ -23,7 +23,6 @@ public class Testauto{
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		driver.get("https://www.facebook.com/");
-	
 	}
 
 	@Test
@@ -48,17 +47,17 @@ public class Testauto{
 	
 	
 	  @Test public void TC_04_Login_with_incorrect_pass() { // Login
-		  driver.get("https://www.facebook.com/");
-		  driver.findElement(By.id("email")).sendKeys("0944496154");
-		  driver.findElement(By.id("pass")).sendKeys("Tha2001@");
-		  WebElement login_button = driver.findElement(By.name("login"));
-	  login_button.click();
-	  sleepInSecond(2);
+			  driver.get("https://www.facebook.com/");
+			  driver.findElement(By.id("email")).sendKeys("0944496154");
+			  driver.findElement(By.id("pass")).sendKeys("Tha2001@");
+			  WebElement login_button = driver.findElement(By.name("login"));
+		  login_button.click();
+		  sleepInSecond(2);
 		  String errorAlert = driver.findElement(By.id("error_box")).getText();
 		  System.out.println(errorAlert);
-		  String validAlert = "Wrong credentials \nInvalid username or password";
-		  System.out.println(validAlert);
-//	Assert.assertEquals(errorAlert,validAlert);
+//		  String validAlert = "Wrong credentials \nInvalid username or password";
+//		  System.out.println(validAlert);
+     //	Assert.assertEquals(errorAlert,validAlert);
 	  }
 		
 		

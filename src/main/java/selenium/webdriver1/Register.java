@@ -9,7 +9,7 @@ import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.Test;
 
-public class Xpath {
+public class Register {
     WebDriver driver;
 	String projectPath = System.getProperty("user.dir");
 
@@ -119,8 +119,8 @@ public class Xpath {
 		driver.findElement(By.id("txtFirstname")).sendKeys("thang nguyen");
 		driver.findElement(By.id("txtEmail")).sendKeys("nguyenthithang09001@gmail.com");
 		driver.findElement(By.id("txtCEmail")).sendKeys("nguyenthithang09001@gmail.com");
-		driver.findElement(By.id("txtPassword")).sendKeys("123");
-		driver.findElement(By.id("txtCPassword")).sendKeys("1234");
+		driver.findElement(By.id("txtPassword")).sendKeys("1236887988");
+		driver.findElement(By.id("txtCPassword")).sendKeys("1234768");
 		driver.findElement(By.id("txtPhone")).sendKeys("0123456789");
 		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ'] ")).click();
 		sleepInSecond(2);
@@ -131,7 +131,7 @@ public class Xpath {
 		
 		//Verify error message as expected
 		driver.findElement(By.id("txtCPassword-error")).getText();
-		Assert.assertEquals(driver.findElement(By.id("txtCPassword-error")).getText(), "Mật khẩu nhập không khớp");
+		Assert.assertEquals(driver.findElement(By.id("txtCPassword-error")).getText(), "Mật khẩu bạn nhập không khớp");
 	}
 
 	@Test
@@ -140,9 +140,9 @@ public class Xpath {
 		driver.findElement(By.id("txtFirstname")).sendKeys("thang nguyen");
 		driver.findElement(By.id("txtEmail")).sendKeys("nguyenthithang09001@gmail.com");
 		driver.findElement(By.id("txtCEmail")).sendKeys("nguyenthithang09001@gmail.com");
-		driver.findElement(By.id("txtPassword")).sendKeys("123");
-		driver.findElement(By.id("txtCPassword")).sendKeys("1234");
-		driver.findElement(By.id("txtPhone")).sendKeys("12344549");
+		driver.findElement(By.id("txtPassword")).sendKeys("12345678");
+		driver.findElement(By.id("txtCPassword")).sendKeys("12345678");
+		driver.findElement(By.id("txtPhone")).sendKeys("097667");
 		driver.findElement(By.xpath("//form[@id='frmLogin']//button[text()='ĐĂNG KÝ'] ")).click();
 		sleepInSecond(2);
 		
@@ -151,7 +151,7 @@ public class Xpath {
 		//Assert.assertTrue(true);
 		
 		//Verify error message as expected
-		Assert.assertEquals(driver.findElement(By.id("txtCPassword-error")).getText(), "Số điện thoại không đúng: 012 - 02 -018 - 019");
+		Assert.assertEquals(driver.findElement(By.id("txtCPassword-error")).getText(), "Số điện thoại phải từ 10-11 số.");
 	}
 	
 	@AfterClass
